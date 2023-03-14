@@ -38,7 +38,7 @@ document.querySelector("#btnThemNV").onclick = function () {
       1000000,
       20000000
     );
-  valid = valid & check.checkRole(nv.luongChucVu, "error-tbChucVu");
+  
   valid =
     valid & check.checkNumber(nv.timework, "error-TbGioLam", "Giờ Làm", 80, 200);
 

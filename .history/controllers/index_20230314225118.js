@@ -112,7 +112,10 @@ document.getElementById("btnCapNhat").onclick = function () {
   valid =
     valid &
     check.checkPassword(nhanVienEdit.password, "error-tbMatKhau", "Mật Khẩu", 6, 10);
-  valid = valid & check.checkNumber(nhanVienEdit.salary,"error-TbLuongCB",
+  valid =    valid &
+    check.checkNumber(
+      nhanVienEdit.salary,
+      "error-TbLuongCB",
       "Lương Cơ Bản",
       1000000,
       20000000

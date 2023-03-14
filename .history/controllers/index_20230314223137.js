@@ -91,8 +91,8 @@ document.getElementById("btnCapNhat").onclick = function () {
   nhanVienEdit.password = document.getElementById("password").value;
   nhanVienEdit.datawork = document.getElementById("datepicker").value;
   nhanVienEdit.position = document.getElementById("chucvu").value;
-  nhanVienEdit.salary = document.getElementById("luongCB").value;
-  nhanVienEdit.timework = document.getElementById("gioLam").value;
+  nhanVienEdit.salary = +document.getElementById("luongCB").value;
+  nhanVienEdit.timework = +document.getElementById("gioLam").value;
 
   var valid = true;
 
@@ -102,7 +102,7 @@ document.getElementById("btnCapNhat").onclick = function () {
     check.checkEmty(nhanVienEdit.email, "tbEmail", "Email") &
     check.checkEmty(nhanVienEdit.password, "tbMatKhau", "Mật Khẩu") &
     check.checkEmty(nhanVienEdit.salary, "tbLuongCB", "Lương Cơ Bản") &
-    check.checkEmty(nhanVienEdit.timework, "tbGioLam", "Giờ Làm");
+    check.checkEmty(nhanVienEdit.timework, "tbGiolam", "Giờ Làm");
   valid =
     valid & check.checkLetter(nhanVienEdit.yourName, "error-tbTen", "Tên Nhân Viên");
   valid = valid & check.checkemail(nhanVienEdit.email, "error-tbEmail", "Email");
@@ -112,7 +112,11 @@ document.getElementById("btnCapNhat").onclick = function () {
   valid =
     valid &
     check.checkPassword(nhanVienEdit.password, "error-tbMatKhau", "Mật Khẩu", 6, 10);
-  valid = valid & check.checkNumber(nhanVienEdit.salary,"error-TbLuongCB",
+  valid =
+    valid &
+    check.checkNumber(
+      nhanVienEdit.salary,
+      "error-TbLuongCB",
       "Lương Cơ Bản",
       1000000,
       20000000

@@ -23,7 +23,7 @@ document.querySelector("#btnThemNV").onclick = function () {
     check.checkEmty(nv.email, "tbEmail", "Email") &
     check.checkEmty(nv.password, "tbMatKhau", "Mật Khẩu") &
     check.checkEmty(nv.salary, "tbLuongCB", "Lương Cơ Bản") &
-    check.checkEmty(nv.timework, "tbGioLam", "Giờ Làm");
+    check.checkEmty(nv.timework, "tbGiolam", "Giờ Làm");
   valid = valid & check.checkLetter(nv.yourName, "error-tbTen", "Tên Nhân Viên");
   valid = valid & check.checkemail(nv.email, "error-tbEmail", "Email");
   valid = valid & check.checkLength(nv.account, "error-tbTKNV", "Tài Khoản", 4, 6);
@@ -91,8 +91,8 @@ document.getElementById("btnCapNhat").onclick = function () {
   nhanVienEdit.password = document.getElementById("password").value;
   nhanVienEdit.datawork = document.getElementById("datepicker").value;
   nhanVienEdit.position = document.getElementById("chucvu").value;
-  nhanVienEdit.salary = document.getElementById("luongCB").value;
-  nhanVienEdit.timework = document.getElementById("gioLam").value;
+  nhanVienEdit.salary = +document.getElementById("luongCB").value;
+  nhanVienEdit.timework = +document.getElementById("gioLam").value;
 
   var valid = true;
 
@@ -102,17 +102,21 @@ document.getElementById("btnCapNhat").onclick = function () {
     check.checkEmty(nhanVienEdit.email, "tbEmail", "Email") &
     check.checkEmty(nhanVienEdit.password, "tbMatKhau", "Mật Khẩu") &
     check.checkEmty(nhanVienEdit.salary, "tbLuongCB", "Lương Cơ Bản") &
-    check.checkEmty(nhanVienEdit.timework, "tbGioLam", "Giờ Làm");
+    check.checkEmty(nhanVienEdit.timework, "tbGiolam", "Giờ Làm");
   valid =
     valid & check.checkLetter(nhanVienEdit.yourName, "error-tbTen", "Tên Nhân Viên");
   valid = valid & check.checkemail(nhanVienEdit.email, "error-tbEmail", "Email");
   valid =
     valid &
-    check.checkLength(nhanVienEdit.account, "error-tbTKNV", "Tài Khoản", 4, 6);
+    check.checkLength(nhanVienEdit.account, "error-tbTKVN", "Tài Khoản", 4, 6);
   valid =
     valid &
     check.checkPassword(nhanVienEdit.password, "error-tbMatKhau", "Mật Khẩu", 6, 10);
-  valid = valid & check.checkNumber(nhanVienEdit.salary,"error-TbLuongCB",
+  valid =
+    valid &
+    check.checkNumber(
+      nhanVienEdit.salary,
+      "error-TbLuongCB",
       "Lương Cơ Bản",
       1000000,
       20000000

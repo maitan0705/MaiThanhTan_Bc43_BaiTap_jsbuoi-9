@@ -6,7 +6,7 @@ function Validation() {
       ).innerHTML = `${name} Không Được Bỏ Trống!`;
       return false;
     }
-    document.getElementById(idError).innerHTML = " ";
+    document.getElementById(idError).innerHTML = "";
     return true;
   };
 

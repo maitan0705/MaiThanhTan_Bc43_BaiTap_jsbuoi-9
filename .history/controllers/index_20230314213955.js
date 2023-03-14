@@ -1,5 +1,5 @@
 let mangNhanVien = [];
-var check = new Validation();
+// var check = new Validation();
 
 var myForm = document.getElementById("myForm");
 
@@ -13,38 +13,38 @@ document.querySelector("#btnThemNV").onclick = function () {
   nv.datawork = document.querySelector("#datepicker").value;
   nv.salary = document.querySelector("#luongCB").value;
   nv.position = document.querySelector("#chucvu").value;
-  nv.timework = document.querySelector("#gioLam").value;
+  nv.timework = +document.querySelector("#gioLam").value;
 
-  var valid = true;
+//   var valid = true;
+// 
+//   valid =
+//     check.checkEmty(nv.account, "tbTKNV", "Tài Khoản") &
+//     check.checkEmty(nv.yourName, "tbTen", "Tên Nhân Viên") &
+//     check.checkEmty(nv.email, "tbEmail", "Email") &
+//     check.checkEmty(nv.password, "tbMatKhau", "Mật Khẩu") &
+//     check.checkEmty(nv.salary, "tbLuongCB", "Lương Cơ Bản") &
+//     check.checkEmty(nv.timework, "tbGiolam", "Giờ Làm");
+  // valid = valid & check.checkLetter(nv.yourName, "tbTen", "Tên Nhân Viên");
+  // valid = valid & check.checkemail(nv.email, "tbEmail", "Email");
+  // valid = valid & check.checkLength(nv.account, "tbTKVN", "Tài Khoản", 4, 6);
+  // valid =
+  //   valid & check.checkPassword(nv.password, "tbMatKhau", "Mật Khẩu", 6, 10);
+  // valid =
+  //   valid &
+  //   check.checkNumber(
+  //     nv.salary,
+  //     "TbLuongCB",
+  //     "Lương Cơ Bản",
+  //     1000000,
+  //     20000000
+  //   );
+  // valid = valid & check.checkRole(nv.luongChucVu, "tbChucVu");
+  // valid =
+  //   valid & check.checkNumber(nv.timework, "TbGioLam", "Giờ Làm", 80, 200);
 
-  valid =
-    check.checkEmty(nv.account, "tbTKNV", "Tài Khoản") &
-    check.checkEmty(nv.yourName, "tbTen", "Tên Nhân Viên") &
-    check.checkEmty(nv.email, "tbEmail", "Email") &
-    check.checkEmty(nv.password, "tbMatKhau", "Mật Khẩu") &
-    check.checkEmty(nv.salary, "tbLuongCB", "Lương Cơ Bản") &
-    check.checkEmty(nv.timework, "tbGioLam", "Giờ Làm");
-  valid = valid & check.checkLetter(nv.yourName, "error-tbTen", "Tên Nhân Viên");
-  valid = valid & check.checkemail(nv.email, "error-tbEmail", "Email");
-  valid = valid & check.checkLength(nv.account, "error-tbTKNV", "Tài Khoản", 4, 6);
-  valid =
-    valid & check.checkPassword(nv.password, "error-tbMatKhau", "Mật Khẩu", 6, 10);
-  valid =
-    valid &
-    check.checkNumber(
-      nv.salary,
-      "error-TbLuongCB",
-      "Lương Cơ Bản",
-      1000000,
-      20000000
-    );
-  valid = valid & check.checkRole(nv.luongChucVu, "error-tbChucVu");
-  valid =
-    valid & check.checkNumber(nv.timework, "error-TbGioLam", "Giờ Làm", 80, 200);
-
-  if (!valid) {
-    return;
-  }
+  // if (!valid) {
+  //   return;
+  // }
   let isValid = validate();
   if (!isValid) {
     return;
@@ -91,40 +91,44 @@ document.getElementById("btnCapNhat").onclick = function () {
   nhanVienEdit.password = document.getElementById("password").value;
   nhanVienEdit.datawork = document.getElementById("datepicker").value;
   nhanVienEdit.position = document.getElementById("chucvu").value;
-  nhanVienEdit.salary = document.getElementById("luongCB").value;
-  nhanVienEdit.timework = document.getElementById("gioLam").value;
+  nhanVienEdit.salary = +document.getElementById("luongCB").value;
+  nhanVienEdit.timework = +document.getElementById("gioLam").value;
 
-  var valid = true;
+//   var valid = true;
+// 
+//   valid =
+//     check.checkEmty(nhanVienEdit.account, "tbTKNV", "Tài Khoản") &
+//     check.checkEmty(nhanVienEdit.yourName, "tbTen", "Tên Nhân Viên") &
+//     check.checkEmty(nhanVienEdit.email, "tbEmail", "Email") &
+//     check.checkEmty(nhanVienEdit.password, "tbMatKhau", "Mật Khẩu") &
+//     check.checkEmty(nhanVienEdit.salary, "tbLuongCB", "Lương Cơ Bản") &
+//     check.checkEmty(nhanVienEdit.timework, "tbGiolam", "Giờ Làm");
+  // valid =
+  //   valid & check.checkLetter(nhanVienEdit.yourName, "tbTen", "Tên Nhân Viên");
+  // valid = valid & check.checkemail(nhanVienEdit.email, "tbEmail", "Email");
+  // valid =
+  //   valid &
+  //   check.checkLength(nhanVienEdit.account, "tbTKVN", "Tài Khoản", 4, 6);
+  // valid =
+  //   valid &
+  //   check.checkPassword(nhanVienEdit.password, "tbMatKhau", "Mật Khẩu", 6, 10);
+  // valid =
+  //   valid &
+  //   check.checkNumber(
+  //     nhanVienEdit.salary,
+  //     "TbLuongCB",
+  //     "Lương Cơ Bản",
+  //     1000000,
+  //     20000000
+  //   );
+  // valid = valid & check.checkRole(nhanVienEdit.luongChucVu, "tbChucVu");
+  // valid =
+  //   valid &
+  //   check.checkNumber(nhanVienEdit.timework, "TbGioLam", "Giờ Làm", 80, 200);
 
-  valid =
-    check.checkEmty(nhanVienEdit.account, "tbTKNV", "Tài Khoản") &
-    check.checkEmty(nhanVienEdit.yourName, "tbTen", "Tên Nhân Viên") &
-    check.checkEmty(nhanVienEdit.email, "tbEmail", "Email") &
-    check.checkEmty(nhanVienEdit.password, "tbMatKhau", "Mật Khẩu") &
-    check.checkEmty(nhanVienEdit.salary, "tbLuongCB", "Lương Cơ Bản") &
-    check.checkEmty(nhanVienEdit.timework, "tbGioLam", "Giờ Làm");
-  valid =
-    valid & check.checkLetter(nhanVienEdit.yourName, "error-tbTen", "Tên Nhân Viên");
-  valid = valid & check.checkemail(nhanVienEdit.email, "error-tbEmail", "Email");
-  valid =
-    valid &
-    check.checkLength(nhanVienEdit.account, "error-tbTKNV", "Tài Khoản", 4, 6);
-  valid =
-    valid &
-    check.checkPassword(nhanVienEdit.password, "error-tbMatKhau", "Mật Khẩu", 6, 10);
-  valid = valid & check.checkNumber(nhanVienEdit.salary,"error-TbLuongCB",
-      "Lương Cơ Bản",
-      1000000,
-      20000000
-    );
-  valid = valid & check.checkRole(nhanVienEdit.luongChucVu, "error-tbChucVu");
-  valid =
-    valid &
-    check.checkNumber(nhanVienEdit.timework, "error-TbGioLam", "Giờ Làm", 80, 200);
-
-  if (!valid) {
-    return;
-  }
+  // if (!valid) {
+  //   return;
+  // }
 
   for (var index = 0; index < mangNhanVien.length; index++) {
     if (mangNhanVien[index].account === nhanVienEdit.account) {
