@@ -1,6 +1,6 @@
 function Validation(){
     this.checkEmty = function (value,idError,name){
-    if(value.trim()==''){
+    if(value.trim()===''){
         document.getElementById(idError).innerHTML=`${name} Không Được Bỏ Trống!`;
         return false;
     }

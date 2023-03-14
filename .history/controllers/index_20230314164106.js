@@ -4,7 +4,6 @@ let mangNhanVien = [];
 var myForm = document.getElementById("myForm");
 
 document.querySelector("#btnThemNV").onclick = function () {
-
   let nv = new NhanVien();
   nv.account = document.querySelector("#tknv").value;
   nv.yourName = document.querySelector("#name").value;
@@ -50,18 +49,12 @@ document.querySelector("#btnThemNV").onclick = function () {
   luulocalStorage();
  
 };
-document.getElementById("btnThem").onclick = function () {
-  document.getElementById("btnThemNV").disabled = false;
-  document.getElementById("btnCapNhat").disabled = true;
-  document.getElementById("tknv").disabled = false;
-  // Reset lại form
-  myForm.reset();
-};
+
 // lấy thông tin nhân viên 
 function layThongTin(accountNV) {
+  document.getElementById("tknv").disabled = true;
   document.getElementById("btnCapNhat").disabled = false;
   document.getElementById("btnThemNV").disabled = true;
-  document.getElementById("tknv").disabled = true;
   for (var index = 0; index < mangNhanVien.length; index++) {
     if (mangNhanVien[index].account === accountNV) {
       //in thông tin sinh viên tìm thấy lên giao diện
@@ -141,8 +134,8 @@ document.getElementById("btnCapNhat").onclick = function () {
 
   renderNhanVien(mangNhanVien);
   luulocalStorage();
-  
-  myForm.reset();
+  document.getElementById("tknv").disabled = true;
+  document.getElementById("btnThemNV").disabled = true;
 };
 
 function renderNhanVien(array) {
@@ -195,7 +188,12 @@ function xoaNhanVien(accountNV) {
 
 
 
-
+document.getElementById("btnThem").onclick = function () {
+  document.getElementById("btnCapNhat").disabled = true;
+  document.getElementById("btnThemNV").disabled = false;
+  // Reset lại form
+  myForm.reset();
+};
 
 //lưu thông tin
 function luulocalStorage() {

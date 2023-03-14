@@ -53,15 +53,14 @@ document.querySelector("#btnThemNV").onclick = function () {
 document.getElementById("btnThem").onclick = function () {
   document.getElementById("btnThemNV").disabled = false;
   document.getElementById("btnCapNhat").disabled = true;
-  document.getElementById("tknv").disabled = false;
   // Reset lại form
   myForm.reset();
 };
 // lấy thông tin nhân viên 
 function layThongTin(accountNV) {
+  document.getElementById("tknv").disabled = true;
   document.getElementById("btnCapNhat").disabled = false;
   document.getElementById("btnThemNV").disabled = true;
-  document.getElementById("tknv").disabled = true;
   for (var index = 0; index < mangNhanVien.length; index++) {
     if (mangNhanVien[index].account === accountNV) {
       //in thông tin sinh viên tìm thấy lên giao diện

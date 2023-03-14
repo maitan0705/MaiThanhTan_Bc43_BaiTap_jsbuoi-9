@@ -53,7 +53,7 @@ document.querySelector("#btnThemNV").onclick = function () {
 document.getElementById("btnThem").onclick = function () {
   document.getElementById("btnThemNV").disabled = false;
   document.getElementById("btnCapNhat").disabled = true;
-  document.getElementById("tknv").disabled = false;
+  document.getElementById("tknv").disabled = f;
   // Reset lại form
   myForm.reset();
 };

@@ -55,7 +55,6 @@ document.getElementById("btnThem").onclick = function () {
   document.getElementById("btnCapNhat").disabled = true;
   document.getElementById("tknv").disabled = false;
   // Reset lại form
-  myForm.reset();
 };
 // lấy thông tin nhân viên 
 function layThongTin(accountNV) {
